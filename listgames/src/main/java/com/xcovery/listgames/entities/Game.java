@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 
 import java.util.Objects;
 
-@Entity
-@Table(name = "tb_game")
+@Entity // Indica que a classe vai mapear uma atabela no banco de dados
+@Table(name = "tb_game") // Informando um nome para a tabela do banco de dados
 public class Game {
 
     @Id
@@ -13,6 +13,7 @@ public class Game {
     private long id;
     private String title;
 
+    //year é uma palavra reservada do sql, resolver renomeado com uma notação, customizando o nome da coluna
     @Column(name = "game_year")
     private int year;
     private String gere;
