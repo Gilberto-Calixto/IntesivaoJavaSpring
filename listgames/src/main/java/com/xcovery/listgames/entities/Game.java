@@ -16,19 +16,24 @@ public class Game {
     //year é uma palavra reservada do sql, resolver renomeado com uma notação, customizando o nome da coluna
     @Column(name = "game_year")
     private int year;
-    private String gere;
+    private String genre;
+    private String platforms;
     private double score;
-    private String imhUrl;
+    private String imgUrl;
+    @Column(columnDefinition = "TEXT") //Definindo o tipo de dado da coluna
     private String shortDescription;
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
-    public Game(long id, String title, int year, String gere, double score, String imhUrl, String shortDescription, String longDescription) {
+
+    public Game(long id, String title, int year, String genre, String platforms, double score, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
-        this.gere = gere;
+        this.genre = genre;
+        this.platforms = platforms;
         this.score = score;
-        this.imhUrl = imhUrl;
+        this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
     }
@@ -58,6 +63,14 @@ public class Game {
         this.id = id;
     }
 
+    public String getPlatforms() {
+        return platforms;
+    }
+
+    public void setPlatforms(String platforms) {
+        this.platforms = platforms;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -74,12 +87,12 @@ public class Game {
         this.year = year;
     }
 
-    public String getGere() {
-        return gere;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGere(String gere) {
-        this.gere = gere;
+    public void setGenre(String gere) {
+        this.genre = gere;
     }
 
     public double getScore() {
@@ -90,12 +103,12 @@ public class Game {
         this.score = score;
     }
 
-    public String getImhUrl() {
-        return imhUrl;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
     public void setImhUrl(String imhUrl) {
-        this.imhUrl = imhUrl;
+        this.imgUrl = imhUrl;
     }
 
     public String getShortDescription() {
